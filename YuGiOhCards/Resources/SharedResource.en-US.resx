@@ -120,10 +120,13 @@
   <data name="Ana_Sayfa" xml:space="preserve">
     <value>Home</value>
   </data>
-  <data name="Gizlilik" xml:space="preserve">
+  <data name="Gizlili_Polisitası" xml:space="preserve">
     <value>Privacy</value>
   </data>
-  <data name="Selamlama" xml:space="preserve">
+  <data name="Hoş Geldiniz" xml:space="preserve">
     <value>Welcome</value>
+  </data>
+  <data name="Ürünler" xml:space="preserve">
+    <value>Products</value>
   </data>
 </root>

@@ -18,8 +18,6 @@ namespace YuGiOhCards.Models
 
         public string Aciklama { get; set; }
 
-        public Birim Birim { get; set; }
-
         public string UretimYeri { get; set; }
 
         public int? KategoriId { get; set; }
@@ -30,9 +28,4 @@ namespace YuGiOhCards.Models
     }
 
 
-    public enum Birim
-    {
-        Adet 
-        // ürün türü kart temelinden çıkarsa birim miktarı artabilir
-    }
 }
