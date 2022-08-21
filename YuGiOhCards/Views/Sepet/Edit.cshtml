@@ -1,0 +1,54 @@
+﻿@model YuGiOhCards.Models.Sepet
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Sepet</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="UrunId" class="control-label"></label>
+                <select asp-for="UrunId" class="form-control" asp-items="ViewBag.UrunId"></select>
+                <span asp-validation-for="UrunId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MusteriId" class="control-label"></label>
+                <select asp-for="MusteriId" class="form-control" asp-items="ViewBag.MusteriId"></select>
+                <span asp-validation-for="MusteriId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Miktar" class="control-label"></label>
+                <input asp-for="Miktar" class="form-control" />
+                <span asp-validation-for="Miktar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fiyat" class="control-label"></label>
+                <input asp-for="Fiyat" class="form-control" />
+                <span asp-validation-for="Fiyat" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="SiparisOk" /> @Html.DisplayNameFor(model => model.SiparisOk)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

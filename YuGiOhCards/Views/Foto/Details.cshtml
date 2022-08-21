@@ -1,0 +1,30 @@
+﻿@model YuGiOhCards.Models.Foto
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Foto</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ResimAd)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ResimAd)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Urun)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Urun.Id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

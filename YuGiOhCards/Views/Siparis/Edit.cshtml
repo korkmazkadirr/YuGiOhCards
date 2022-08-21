@@ -1,0 +1,99 @@
+﻿@model YuGiOhCards.Models.Siparis
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Siparis</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="MusteriId" class="control-label"></label>
+                <select asp-for="MusteriId" class="form-control" asp-items="ViewBag.MusteriId"></select>
+                <span asp-validation-for="MusteriId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SiparisTarihi" class="control-label"></label>
+                <input asp-for="SiparisTarihi" class="form-control" />
+                <span asp-validation-for="SiparisTarihi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GondermeTarihi" class="control-label"></label>
+                <input asp-for="GondermeTarihi" class="form-control" />
+                <span asp-validation-for="GondermeTarihi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TeslimTarihi" class="control-label"></label>
+                <input asp-for="TeslimTarihi" class="form-control" />
+                <span asp-validation-for="TeslimTarihi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IadeTarihi" class="control-label"></label>
+                <input asp-for="IadeTarihi" class="form-control" />
+                <span asp-validation-for="IadeTarihi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KargoFirma" class="control-label"></label>
+                <input asp-for="KargoFirma" class="form-control" />
+                <span asp-validation-for="KargoFirma" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KargoUcret" class="control-label"></label>
+                <input asp-for="KargoUcret" class="form-control" />
+                <span asp-validation-for="KargoUcret" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ToplamUcret" class="control-label"></label>
+                <input asp-for="ToplamUcret" class="form-control" />
+                <span asp-validation-for="ToplamUcret" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Indirim" class="control-label"></label>
+                <input asp-for="Indirim" class="form-control" />
+                <span asp-validation-for="Indirim" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SiparisDurumu" class="control-label"></label>
+                <select asp-for="SiparisDurumu" class="form-control"></select>
+                <span asp-validation-for="SiparisDurumu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OdemeDurumu" class="control-label"></label>
+                <select asp-for="OdemeDurumu" class="form-control"></select>
+                <span asp-validation-for="OdemeDurumu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SiparisKodu" class="control-label"></label>
+                <input asp-for="SiparisKodu" class="form-control" />
+                <span asp-validation-for="SiparisKodu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KargoTakipNo" class="control-label"></label>
+                <input asp-for="KargoTakipNo" class="form-control" />
+                <span asp-validation-for="KargoTakipNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Aciklama" class="control-label"></label>
+                <input asp-for="Aciklama" class="form-control" />
+                <span asp-validation-for="Aciklama" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

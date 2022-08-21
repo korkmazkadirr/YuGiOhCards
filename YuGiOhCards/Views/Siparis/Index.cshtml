@@ -1,0 +1,113 @@
+﻿@model IEnumerable<YuGiOhCards.Models.Siparis>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ApplicationUser)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SiparisTarihi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GondermeTarihi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TeslimTarihi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IadeTarihi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KargoFirma)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KargoUcret)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ToplamUcret)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Indirim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SiparisDurumu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OdemeDurumu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SiparisKodu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KargoTakipNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Aciklama)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApplicationUser.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SiparisTarihi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GondermeTarihi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TeslimTarihi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IadeTarihi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KargoFirma)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KargoUcret)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ToplamUcret)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Indirim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SiparisDurumu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OdemeDurumu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SiparisKodu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KargoTakipNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Aciklama)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
