@@ -86,7 +86,11 @@
 
 
     </main>
-
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
     <!-- Footer-->
     <footer class="bg-dark py-4 mt-auto">
         <div class="container px-5">
@@ -107,6 +111,6 @@
     <!-- Core theme JS-->
     <script src="~/template/js/scripts.js"></script>
 </body>
-@RenderBody()
+@await RenderSectionAsync("Scripts", required: false)
 
 </html>
