@@ -123,8 +123,14 @@
   <data name="Gizlilik_Politikası" xml:space="preserve">
     <value>Gizlilik_Politikası</value>
   </data>
+  <data name="Hadi_Baslayalim" xml:space="preserve">
+    <value>Hadi Başlayalım</value>
+  </data>
   <data name="Selamlama" xml:space="preserve">
     <value>Hoşgeldiniz</value>
+  </data>
+  <data name="Yu-Gi-Oh-Sınırlı Üretim Millennium Taş" xml:space="preserve">
+    <value />
   </data>
   <data name="Ürünler" xml:space="preserve">
     <value>Ürünler</value>

@@ -123,6 +123,9 @@
   <data name="Gizlili_Polisitası" xml:space="preserve">
     <value>Privacy</value>
   </data>
+  <data name="Hadi_Baslayalim" xml:space="preserve">
+    <value>Let's get started</value>
+  </data>
   <data name="Hoş Geldiniz" xml:space="preserve">
     <value>Welcome</value>
   </data>

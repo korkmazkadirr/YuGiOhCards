@@ -32,14 +32,14 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">Ana Sayfa</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">@language.Getkey("Ana_Sayfa")</a></li>
                         <li class="nav-item"><a class="nav-link" href="~/template/contact.html">İletişim</a></li>
                         <li class="nav-item"><a class="nav-link" asp-controller="UrunlerSayfası" asp-action="Listele">Ürünler</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kategoriler</a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
-                                <li><a class="dropdown-item" href="~/template/blog-home.html">Paket Ürünler</a></li>
-                                <li><a class="dropdown-item" href="~/template/blog-post.html">Perakende Ürünler</a></li>
+                                <li><a class="dropdown-item" asp-controller="ToptanUrunler" asp-action="toptanlistele">Toptan Ürünler</a></li>
+                                <li><a class="dropdown-item" asp-controller="PerakendeUrunler" asp-action="perakendelistele">Perakende Ürünler</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -59,25 +59,29 @@
                 </div>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <partial name="_LoginPartial" />
+                    
+                    
                     <ul class="dropdown-menu bg-primary">
+                        
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">@language.Getkey("Ana_Sayfa")</a>
+                            <a -asp-area="" asp-controller="Home" asp-action="Index">@language.Getkey("Ana_Sayfa")</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">@language.Getkey("Gizlilik")</a>
+                            <a -asp-area="" asp-controller="Home" asp-action="Privacy">@language.Getkey("Gizlilik")</a>
                         </li>
                     </ul>
                 </div>
                 <div class="nav-wrapper">
-                    <div class="bg-dark">
-                        Dil:
-                        <ul class="nav-link">
-                            <li><a asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="tr-Tr" class="nav-link">Türkçe</a></li>
+                    <div style="color:darkgray">
+                       
+                            
+                            Dil :<ul class="nav-link" style="list-style-type:none">
+            <li><a style="color: darkgray" class="nav-link" asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="tr-Tr">Türkçe</a></li>
 
-                            <li><a asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="en-US" class="nav-link">İngilizce</a></li>
+            <li><a style="color: darkgray" class="nav-link" asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="en-US" >English</a></li>
 
-                        </ul>
-                    </div>
+        </ul>
+</div>
 
                 </div>
             </div>
