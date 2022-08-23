@@ -10,23 +10,28 @@ using YuGiOhCards.Models;
 
 namespace YuGiOhCards.Controllers
 {
-    public class IndirimliUrunlerController : Controller
+    public class UrunlerSayfasıController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public IndirimliUrunlerController(ApplicationDbContext context)
+        public UrunlerSayfasıController(ApplicationDbContext context)
         {
             _context = context;
         }
+        public IActionResult Listele()
+        {
+            var db = _context.Urun;
+            return View(db.ToList());
+        }
 
-        // GET: IndirimliUrunler
+        // GET: UrunlerSayfası
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.IndirimliUrunler.Include(i => i.Urun);
+            var applicationDbContext = _context.Urun.Include(u => u.Kategori);
             return View(await applicationDbContext.ToListAsync());
         }
 
-        // GET: IndirimliUrunler/Details/5
+        // GET: UrunlerSayfası/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -34,42 +39,42 @@ namespace YuGiOhCards.Controllers
                 return NotFound();
             }
 
-            var indirimliUrunler = await _context.IndirimliUrunler
-                .Include(i => i.Urun)
+            var urun = await _context.Urun
+                .Include(u => u.Kategori)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (indirimliUrunler == null)
+            if (urun == null)
             {
                 return NotFound();
             }
 
-            return View(indirimliUrunler);
+            return View(urun);
         }
 
-        // GET: IndirimliUrunler/Create
+        // GET: UrunlerSayfası/Create
         public IActionResult Create()
         {
-            ViewData["UrunId"] = new SelectList(_context.Urun, "Id", "Ad");
+            ViewData["KategoriId"] = new SelectList(_context.Kategori, "Id", "Id");
             return View();
         }
 
-        // POST: IndirimliUrunler/Create
+        // POST: UrunlerSayfası/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,UrunId,Oran,Baslangic,Bitis,DigerKampanya")] IndirimliUrunler indirimliUrunler)
+        public async Task<IActionResult> Create([Bind("Id,Ad,Fiyat,Miktar,Aciklama,UretimYeri,KategoriId")] Urun urun)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(indirimliUrunler);
+                _context.Add(urun);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["UrunId"] = new SelectList(_context.Urun, "Id", "Id", indirimliUrunler.UrunId);
-            return View(indirimliUrunler);
+            ViewData["KategoriId"] = new SelectList(_context.Kategori, "Id", "Id", urun.KategoriId);
+            return View(urun);
         }
 
-        // GET: IndirimliUrunler/Edit/5
+        // GET: UrunlerSayfası/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -77,23 +82,23 @@ namespace YuGiOhCards.Controllers
                 return NotFound();
             }
 
-            var indirimliUrunler = await _context.IndirimliUrunler.FindAsync(id);
-            if (indirimliUrunler == null)
+            var urun = await _context.Urun.FindAsync(id);
+            if (urun == null)
             {
                 return NotFound();
             }
-            ViewData["UrunId"] = new SelectList(_context.Urun, "Id", "Id", indirimliUrunler.UrunId);
-            return View(indirimliUrunler);
+            ViewData["KategoriId"] = new SelectList(_context.Kategori, "Id", "Id", urun.KategoriId);
+            return View(urun);
         }
 
-        // POST: IndirimliUrunler/Edit/5
+        // POST: UrunlerSayfası/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,UrunId,Oran,Baslangic,Bitis,DigerKampanya")] IndirimliUrunler indirimliUrunler)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Ad,Fiyat,Miktar,Aciklama,UretimYeri,KategoriId")] Urun urun)
         {
-            if (id != indirimliUrunler.Id)
+            if (id != urun.Id)
             {
                 return NotFound();
             }
@@ -102,12 +107,12 @@ namespace YuGiOhCards.Controllers
             {
                 try
                 {
-                    _context.Update(indirimliUrunler);
+                    _context.Update(urun);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!IndirimliUrunlerExists(indirimliUrunler.Id))
+                    if (!UrunExists(urun.Id))
                     {
                         return NotFound();
                     }
@@ -118,11 +123,11 @@ namespace YuGiOhCards.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["UrunId"] = new SelectList(_context.Urun, "Id", "Id", indirimliUrunler.UrunId);
-            return View(indirimliUrunler);
+            ViewData["KategoriId"] = new SelectList(_context.Kategori, "Id", "Id", urun.KategoriId);
+            return View(urun);
         }
 
-        // GET: IndirimliUrunler/Delete/5
+        // GET: UrunlerSayfası/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -130,31 +135,31 @@ namespace YuGiOhCards.Controllers
                 return NotFound();
             }
 
-            var indirimliUrunler = await _context.IndirimliUrunler
-                .Include(i => i.Urun)
+            var urun = await _context.Urun
+                .Include(u => u.Kategori)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (indirimliUrunler == null)
+            if (urun == null)
             {
                 return NotFound();
             }
 
-            return View(indirimliUrunler);
+            return View(urun);
         }
 
-        // POST: IndirimliUrunler/Delete/5
+        // POST: UrunlerSayfası/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var indirimliUrunler = await _context.IndirimliUrunler.FindAsync(id);
-            _context.IndirimliUrunler.Remove(indirimliUrunler);
+            var urun = await _context.Urun.FindAsync(id);
+            _context.Urun.Remove(urun);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool IndirimliUrunlerExists(int id)
+        private bool UrunExists(int id)
         {
-            return _context.IndirimliUrunler.Any(e => e.Id == id);
+            return _context.Urun.Any(e => e.Id == id);
         }
     }
 }

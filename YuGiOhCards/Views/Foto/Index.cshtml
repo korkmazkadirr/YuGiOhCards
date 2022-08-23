@@ -25,10 +25,11 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.ResimAd)
+                @*@Html.DisplayFor(modelItem => item.ResimAd)*@ @*bu satır isimli gösterim için*@
+                <img src="@Url.Content(item.ResimAd)" class="d-block w-25" asp-append-version="true">  @*bu satır resimli gösterim*@
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Urun.Id)
+                @Html.DisplayFor(modelItem => item.Urun.Ad)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

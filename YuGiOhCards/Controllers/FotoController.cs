@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -13,10 +15,12 @@ namespace YuGiOhCards.Controllers
     public class FotoController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly IWebHostEnvironment _hostingEnviroment;
 
-        public FotoController(ApplicationDbContext context)
+        public FotoController(ApplicationDbContext context, IWebHostEnvironment hostingEnviroment)
         {
             _context = context;
+            _hostingEnviroment = hostingEnviroment;
         }
 
         // GET: Foto
@@ -48,24 +52,41 @@ namespace YuGiOhCards.Controllers
         // GET: Foto/Create
         public IActionResult Create()
         {
-            ViewData["UrunId"] = new SelectList(_context.Urun, "Id", "Id");
+            ViewData["UrunId"] = new SelectList(_context.Urun, "Id", "Ad");
             return View();
         }
 
         // POST: Foto/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,ResimAd,UrunId")] Foto foto)
         {
             if (ModelState.IsValid)
             {
+                //WebHostEnvironment
+
+                string webRootPath = _hostingEnviroment.WebRootPath;
+                var files = HttpContext.Request.Form.Files;
+
+
+                string fileName = Guid.NewGuid().ToString();
+                var uploads = Path.Combine(webRootPath, @"Images/UrunFoto");
+                var extension = Path.GetExtension(files[0].FileName);//yüklenen resim dosyasının uzantısı
+
+                using (var fileStream = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
+                {
+                    files[0].CopyTo(fileStream);
+                }
+                foto.ResimAd = @"/Images/UrunFoto" + "/" + fileName + extension;
+
+                //***************
                 _context.Add(foto);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["UrunId"] = new SelectList(_context.Urun, "Id", "Id", foto.UrunId);
+            ViewData["UrunId"] = new SelectList(_context.Urun, "Id", "Ad", foto.UrunId);
             return View(foto);
         }
 
@@ -82,13 +103,13 @@ namespace YuGiOhCards.Controllers
             {
                 return NotFound();
             }
-            ViewData["UrunId"] = new SelectList(_context.Urun, "Id", "Id", foto.UrunId);
+            ViewData["UrunId"] = new SelectList(_context.Urun, "Id", "Ad", foto.UrunId);
             return View(foto);
         }
 
         // POST: Foto/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,ResimAd,UrunId")] Foto foto)
@@ -118,7 +139,7 @@ namespace YuGiOhCards.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["UrunId"] = new SelectList(_context.Urun, "Id", "Id", foto.UrunId);
+            ViewData["UrunId"] = new SelectList(_context.Urun, "Id", "Ad", foto.UrunId);
             return View(foto);
         }
 
