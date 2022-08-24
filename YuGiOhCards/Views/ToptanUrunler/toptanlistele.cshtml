@@ -13,7 +13,7 @@
             {
 
 
-                <div class="col-x1-3 col-lg-3 col-md-6 mb-4">
+                <div class="col-x1-3 col-lg-3 col-md-6 mb-4 top-20">
                     <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
 
                         <a class="btn mt-auto" asp-controller="UrunTransfer" asp-route-id="@i.UrunId" asp-action="UrunTransfer"><img src="@Url.Content(i.UrunFoto)" class="d-block w-100"></a>
@@ -22,7 +22,7 @@
                             <h5 class="fw-bolder">@Html.DisplayFor(modelItem => i.UrunAd)</h5>
                             <span class="text-muted">@Html.DisplayFor(modelItem => i.UrunFiyat) TL</span>
                             <form class="card-footer text-center p-4 pt-0 border-top-0 bg-transparent" asp-area="" asp-controller="Sepet" asp-action="SepeteEkle" asp-route-id="@i.UrunId" method="post">
-                            <h1 style="font-size:small">@Html.DisplayFor(modelItem => i.UrunAciklama)</h1>
+                                <h1 style="font-size:small">@Html.DisplayFor(modelItem => i.UrunAciklama)</h1>
 
                                 <button class="btn btn-outline-dark mt-auto" body{background-color:blue} submit">@language.Getkey("Sepete Ekle")</button>
 
@@ -36,3 +36,24 @@
         </div>
     </div>
 </div>
+
+<style>
+    .top-20 {
+        margin-top:40px;
+    }
+    .text-center {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+        font-size: 20px;
+        max-width: 200px;
+    }
+
+    img {
+        width: 200px;
+        height: 200px;
+    }
+
+</style>

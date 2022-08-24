@@ -12,8 +12,8 @@
         <div class="row">
             @foreach (var i in Model)
             {
-                <div class="col-x1-3 col-lg-3 col-md-6 mb-4">
-                    <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                <div class="col-x1-3 col-lg-3 col-md-6 mb-4 card-itself">
+                    <div class="card-footer p-4 pt-0 bg-transparent border-top-0 card-itself">
 
                         <a class="btn mt-auto" asp-controller="UrunTransfer" asp-route-id="@i.UrunId" asp-action="UrunDetay"><img src="@Url.Content(i.UrunFoto)" class="d-block w-100"></a>
 
@@ -31,4 +31,30 @@
         </div>
     </div>
 </div>
+<style>
+    .text-center{
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+        align-items:center;
+        gap: 15px;
+        font-size:20px;
+        max-width:200px;
+    }
+
+    img {
+        width:200px;
+        height:200px;
+    }
+
+    .card-itself{
+        height:500px !important;
+    }
+
+    button{
+        bottom:0;
+    }
+</style> 
+
+
 
