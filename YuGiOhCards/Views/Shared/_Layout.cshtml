@@ -60,13 +60,14 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <partial name="_LoginPartial" />
                     <form class="d-flex">
-                        <button class="btn btn-outline-light" asp-area="" asp-controller="Sepet" asp-action="Index">
+                        <button class="btn btn-outline-light" asp-controller="Sepet" asp-action="Index">
                             <i class="bi-cart-fill me-1"></i>
                             @language.Getkey("Sepetim")
+
                         </button>
                     </form>
 
-                    <ul class="dropdown-menu bg-primary">
+                    @*<ul class="dropdown-menu bg-primary">
 
                         <li class="nav-item">
                             <a -asp-area="" asp-controller="Home" asp-action="Index">@language.Getkey("Ana_Sayfa")</a>
@@ -74,16 +75,16 @@
                         <li class="nav-item">
                             <a -asp-area="" asp-controller="Home" asp-action="Privacy">@language.Getkey("Gizlilik")</a>
                         </li>
-                    </ul>
+                    </ul>*@
                 </div>
                 <div class="nav-wrapper">
                     <div style="color:darkgray">
 
 
-                        <ul class="nav-link" style="list-style-type:none">
-                            <li><a style="color: darkgray" class="nav-link" asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="tr-Tr">Türkçe</a></li>
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li><a style="color: darkgray" class="nav-link" asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="tr-Tr">Tr</a></li>
 
-                            <li><a style="color: darkgray" class="nav-link" asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="en-US">English</a></li>
+                            <li><a style="color: darkgray" class="nav-link" asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="en-US">En</a></li>
 
                         </ul>
                     </div>
