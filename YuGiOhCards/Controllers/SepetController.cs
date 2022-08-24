@@ -162,5 +162,19 @@ namespace YuGiOhCards.Controllers
         {
             return _context.Sepet.Any(e => e.Id == id);
         }
+        public class sepeteekle
+        {
+            public int UrunId { get; set; }
+
+            public int Adet { get; set; }
+            public string UrunAd { get; set; }
+            public double UrunFiyat { get; set; }
+            public string UrunFoto { get; set; }
+            public string UrunKategori { get; set; }
+
+            public int KategoriId { get; set; }
+
+
+        }
     }
 }

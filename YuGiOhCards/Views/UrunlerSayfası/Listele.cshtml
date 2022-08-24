@@ -1,10 +1,11 @@
-﻿
+﻿@inject LanguageService language
+
 @model IEnumerable<YuGiOhCards.Controllers.UrunlerSayfasıController.UrunTransfer>
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-}
+}<h1>Ürünler</h1>
 
 <div class="container-fluid">
     <div class="px-lg-5">
@@ -19,7 +20,10 @@
                         <div class="text-center">
                             <h5 class="fw-bolder">@Html.DisplayFor(modelItem => i.UrunAd)</h5>
                             <span class="text-muted">@Html.DisplayFor(modelItem => i.UrunFiyat) TL</span>
-
+                            <form class="card-footer text-center p-4 pt-0 border-top-0 bg-transparent" asp-area="" asp-controller="Sepet" asp-action="SepeteEkle" asp-route-id="@i.UrunId" method="post">
+                                <h1 style="font-size:small">@Html.DisplayFor(modelItem => i.UrunAciklama)</h1>
+                                <button class="btn btn-outline-dark mt-auto" body{background-color:blue} submit">@language.Getkey("Sepete Ekle")</button>
+                            </form>
                         </div>
                     </div>
                 </div>

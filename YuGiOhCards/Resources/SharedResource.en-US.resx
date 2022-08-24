@@ -120,7 +120,16 @@
   <data name="Ana_Sayfa" xml:space="preserve">
     <value>Home</value>
   </data>
-  <data name="Gizlili_Polisitası" xml:space="preserve">
+  <data name="Başlamak bitirmenin yarısıdır" xml:space="preserve">
+    <value>Well begun is half done</value>
+  </data>
+  <data name="Fotoğraflar" xml:space="preserve">
+    <value>Photos</value>
+  </data>
+  <data name="Giriş Yap" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Gizlilik Polisitası" xml:space="preserve">
     <value>Privacy</value>
   </data>
   <data name="Hadi_Baslayalim" xml:space="preserve">
@@ -129,7 +138,61 @@
   <data name="Hoş Geldiniz" xml:space="preserve">
     <value>Welcome</value>
   </data>
+  <data name="Kampanyalar" xml:space="preserve">
+    <value>Campaigns</value>
+  </data>
+  <data name="Kategori" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="Kategoriler" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="Kayıt Ol" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="Merhaba" xml:space="preserve">
+    <value>Hello</value>
+  </data>
+  <data name="Perakende Ürünler" xml:space="preserve">
+    <value>Retail Products</value>
+  </data>
+  <data name="Sepete Ekle" xml:space="preserve">
+    <value>Add to Card</value>
+  </data>
+  <data name="Sepetim" xml:space="preserve">
+    <value>My Card</value>
+  </data>
+  <data name="Sipariş" xml:space="preserve">
+    <value>Order</value>
+  </data>
+  <data name="Sipariş Detay" xml:space="preserve">
+    <value>Order Detail</value>
+  </data>
+  <data name="Toptan Ürünler" xml:space="preserve">
+    <value>Wholesale Products</value>
+  </data>
+  <data name="Yu Gi Oh Kartları" xml:space="preserve">
+    <value>Yu Gi Oh Cards</value>
+  </data>
+  <data name="Yu-Gi-Oh Dünyasına Hoş Geldin" xml:space="preserve">
+    <value>Welcome To The Yu-Gi-Oh World</value>
+  </data>
+  <data name="Yönetici" xml:space="preserve">
+    <value>Admin</value>
+  </data>
+  <data name="Çıkış Yap" xml:space="preserve">
+    <value>Log Out</value>
+  </data>
   <data name="Ürünler" xml:space="preserve">
     <value>Products</value>
+  </data>
+  <data name="İletişim" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="İndirimli Ürünler" xml:space="preserve">
+    <value>Discounted Products</value>
+  </data>
+  <data name="Şartlar" xml:space="preserve">
+    <value>Terms</value>
   </data>
 </root>

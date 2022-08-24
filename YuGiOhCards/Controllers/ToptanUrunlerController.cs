@@ -32,6 +32,8 @@ namespace YuGiOhCards.Controllers
                                    UrunFiyat = u.Fiyat,
                                    UrunFoto = f.ResimAd,
                                    UrunKategori = k.Ad,
+                                   UrunAciklama = u.Aciklama
+
 
 
 
@@ -169,6 +171,8 @@ namespace YuGiOhCards.Controllers
         {
             public int UrunId { get; set; }
             public string UrunAd { get; set; }
+            public string UrunAciklama { get; set; }
+
             public double UrunFiyat { get; set; }
             public string UrunFoto { get; set; }
             public string UrunKategori { get; set; }

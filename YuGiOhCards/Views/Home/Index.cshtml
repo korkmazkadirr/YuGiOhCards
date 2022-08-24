@@ -4,21 +4,20 @@
     ViewData["Title"] = "Home Page";
 }
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
+@*<!DOCTYPE html>*@
+<!--<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Modern Business - Start Bootstrap Template</title>
+    <title>Modern Business - Start Bootstrap Template</title>-->
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!--<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />-->
     <!-- Bootstrap icons-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />-->
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
-</head>
+    <!--<link href="css/styles.css" rel="stylesheet" />
+</head>-->
 
 <body class="d-flex flex-column h-100">
     <!-- Header-->
@@ -27,10 +26,10 @@
             <div class="row gx-5 align-items-center justify-content-center">
                 <div class="col-lg-8 col-xl-7 col-xxl-6">
                     <div class="my-5 text-center text-xl-start">
-                        <h1 class="display-5 fw-bolder text-white mb-2">Buraya bi özlü söz</h1>
-                        <p class="lead fw-normal text-white-50 mb-4">buraya bi yugioh sözü,alışverişe başlamak için</p>
+                        <h1 class="display-5 fw-bolder text-white mb-2">@language.Getkey("Yu-Gi-Oh Dünyasına Hoş Geldin")</h1>
+                        <p class="lead fw-normal text-white-50 mb-4">@language.Getkey("Başlamak bitirmenin yarısıdır")...</p>
                         <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                            <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">@language.Getkey("Hadi_Baslayalim")</a>
+                            <a class="btn btn-primary btn-lg px-4 me-sm-3" asp-controller="UrunlerSayfası" asp-action="listele">@language.Getkey("Hadi_Baslayalim")</a>
                         </div>
                     </div>
                 </div>
@@ -38,12 +37,12 @@
             </div>
         </div>
     </header>
-    <main class="flex-shrink-0">
+    <!--<main class="flex-shrink-0">-->
         <!-- Features section-->
-        <section class="py-5" id="features">
+        <!--<section class="py-5" id="features">
             <div class="container px-5 my-5">
                 <div class="row gx-5">
-                    <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">İndirimli Ürünler</h2></div>
+                    <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">@language.Getkey("İndirimli Ürünler")</h2></div>
                     <div class="col-lg-8">
                         <div class="row gx-5 row-cols-1 row-cols-md-2">
                             <div class="col mb-5 h-100">
@@ -70,9 +69,9 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section>-->
         <!-- Testimonial section-->
-        <div class="py-5 bg-light">
+        <!--<div class="py-5 bg-light">
             <div class="container px-5 my-5">
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-10 col-xl-7">
@@ -90,9 +89,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
         <!-- Blog preview section-->
-        <section class="py-5">
+        <!--<section class="py-5">
             <div class="container px-5 my-5">
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-8 col-xl-6">
@@ -166,9 +165,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>-->
                 <!-- Call to action-->
-                <aside class="bg-primary bg-gradient rounded-3 p-4 p-sm-5 mt-5">
+                <!--<aside class="bg-primary bg-gradient rounded-3 p-4 p-sm-5 mt-5">
                     <div class="d-flex align-items-center justify-content-between flex-column flex-xl-row text-center text-xl-start">
                         <div class="mb-4 mb-xl-0">
                             <div class="fs-3 fw-bold text-white">New products, delivered to you.</div>
@@ -185,10 +184,9 @@
                 </aside>
             </div>
         </section>
-    </main>
+    </main>-->
     <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+    @*<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+     Core theme JS
+    <script src="js/scripts.js"></script>*@
 </body>
-</html>
