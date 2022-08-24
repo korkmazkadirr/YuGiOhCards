@@ -1,6 +1,7 @@
-﻿@{
-    ViewData["Title"] = "Gizlilik Politikası";
+﻿@inject LanguageService language
+@{
+    ViewData["Title"] = @language.Getkey("İletişim Sayfası");
 }
 <h1>@ViewData["Title"]</h1>
 
-<p>Gizlilik Politikası içeriği.</p>
+<p>@language.Getkey("Burası iletişim sayfasıdır").</p>

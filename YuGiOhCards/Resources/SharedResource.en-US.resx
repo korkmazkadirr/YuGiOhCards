@@ -123,6 +123,9 @@
   <data name="Başlamak bitirmenin yarısıdır" xml:space="preserve">
     <value>Well begun is half done</value>
   </data>
+  <data name="Burası iletişim sayfasıdır" xml:space="preserve">
+    <value>This is the contact page</value>
+  </data>
   <data name="Fotoğraflar" xml:space="preserve">
     <value>Photos</value>
   </data>
@@ -188,6 +191,9 @@
   </data>
   <data name="İletişim" xml:space="preserve">
     <value>Contact</value>
+  </data>
+  <data name="İletişim Sayfası" xml:space="preserve">
+    <value>Contact Page</value>
   </data>
   <data name="İndirimli Ürünler" xml:space="preserve">
     <value>Discounted Products</value>
